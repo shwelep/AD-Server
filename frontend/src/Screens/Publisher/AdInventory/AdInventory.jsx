@@ -1,7 +1,7 @@
 const AdInventory = () => {
     return(
         <div>
-            <h1>Yo</h1>
+            <h1>Ad inventory</h1>
         </div>
     )
 }

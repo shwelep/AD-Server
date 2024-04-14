@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Switch } from 'react-router-dom'
+import Dashboard from './Screens/Publisher/Dashboard/Dashboard';
+import AdSpaceManagement from './Screens/Publisher/AdSpaceManagement/AdSpaceManagement';
+import Offers from './Screens/Publisher/Offers/Offers';
+import AdInventory from './Screens/Publisher/AdInventory/AdInventory';
+import SideBar from './Components/sidebar/sidebar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='container'>
+        <SideBar />
+        <div className='content'>
+          <Routes>
+            <Route path='/' element={<Dashboard />} />
+            <Route path='/offers' element={<Offers />} />
+            <Route path='/ad-space-management' element={<AdSpaceManagement />} />
+            <Route path='/ad-inventory' element={<AdInventory />} />
+          </Routes>
+        </div>
+
+      </div>
+
+    </BrowserRouter>
   );
 }
 
