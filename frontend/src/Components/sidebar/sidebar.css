@@ -1,7 +1,7 @@
 .sidebar {
     top: 0;
     left: 0;
-    width: 200px;
+    width: 250px;
     background-color: #111129;
     padding:20px;
     height: 100%;
@@ -29,7 +29,7 @@
     padding: 10px;
 }
 
-.container {
+.container2 {
     display: flex;
     height: 100%;
 }
@@ -37,9 +37,15 @@
 .content {
     flex: 1;
     padding: 20px;
-    margin-left: 230px;
+    margin-left: 260px;
 }
 
 .ad-boost{
     color: #8D699A;
+}
+
+@media screen and (max-width: 768){
+    .content{
+        margin-left: 100px;
+    }
 }

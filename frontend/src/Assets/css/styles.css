@@ -1,0 +1,42 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.stats {
+    height: 150px;
+    width: 500px;
+    background-color: #111129;
+    margin-right: 100px;
+    border-radius: 10px;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 20px;
+}
+
+.stats p {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.stats h4 {
+    color:white;
+}
+
+.graphs {
+    height: 300px;
+    width: 80px;
+    background-color: #111129;
+    border-radius: 20px;
+    margin-right: 100px;
+    margin-bottom: 20px;
+}
+
+.graphContainer {
+    margin-top: 30px;
+}
+
+.row{
+    padding-top: 50px;
+}
