@@ -2,13 +2,6 @@ import { useState } from "react"
 
 const Offers = () => {
 
-    // const [offers, setOffers] = useState([
-    //     {Ad:'URL Shortener', AdID: 1232142, format: 'Image', type:'Pop up', offer:'N$ 4000', date:'12/03/2023'},
-    //     {Ad:'URL Shortener', AdID: 1232143, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-    //     {Ad:'URL Shortener', AdID: 4632342, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-    //     {Ad:'URL Shortener', AdID: 2432142, format: 'Image', type:'Left Banner', offer:'N$ 4000', date:'12/03/2023'},
-    // ])
-
     let offers = [
         {Ad:'URL Shortener', AdID: 1232142, format: 'Image', type:'Pop up', offer:'N$ 4000', date:'12/03/2023'},
         {Ad:'URL Shortener', AdID: 1232143, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
