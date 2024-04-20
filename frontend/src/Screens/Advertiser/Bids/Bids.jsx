@@ -1,73 +1,101 @@
+import { useState } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './bids.css'; 
+
 const Bids = () => {
-    return(
+    const [bidHistory, setBidHistory] = useState([
+        {
+            Channel: 'John Sports',
+            Offer: 'N$ 4k',
+            Status: 'Accepted',
+            Date: '12/03/2023'
+        },
+        {
+            Channel: 'John Sports',
+            Offer: 'N$ 4k',
+            Status: 'Accepted',
+            Date: '12/03/2023'
+        },
+        {
+            Channel: 'Bet 365',
+            Offer: 'N$ 10k',
+            Status: 'Rejected',
+            Date: '12/09/2023'
+        },
+        {
+            Channel: 'Bet 365',
+            Offer: 'N$ 10k',
+            Status: 'Rejected',
+            Date: '12/09/2023'
+        }
+    ]);
+
+    const [currentBids, setCurrentBids] = useState([
+        {
+            Channel: 'John Sports',
+            Offer: 'N$ 4k',
+            Status: 'Ongoing',
+            Date: '12/03/2023'
+        },
+        {
+            Channel: 'John Sports',
+            Offer: 'N$ 4k',
+            Status: 'Accepted',
+            Date: '12/03/2023'
+        }
+    ]);
+
+    return (
         <div>
-            <h1>Yo</h1>
+            <h1>Bids</h1>
+            <div>
+                <h2>Bid history</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Offer</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {bidHistory.map((bid, index) => (
+                            <tr key={index}>
+                                <td>{bid.Channel}</td>
+                                <td>{bid.Offer}</td>
+                                <td>{bid.Status}</td>
+                                <td>{bid.Date}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+            <div>
+                <h2>Current bids</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Offer</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {currentBids.map((bid, index) => (
+                            <tr key={index}>
+                                <td>{bid.Channel}</td>
+                                <td>{bid.Offer}</td>
+                                <td>{bid.Status}</td>
+                                <td>{bid.Date}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }
 
-export default Bids
-
-// import { useState } from "react"
-
-// const Offers = () => {
-
-//     // const [offers, setOffers] = useState([
-//     //     {Ad:'URL Shortener', AdID: 1232142, format: 'Image', type:'Pop up', offer:'N$ 4000', date:'12/03/2023'},
-//     //     {Ad:'URL Shortener', AdID: 1232143, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-//     //     {Ad:'URL Shortener', AdID: 4632342, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-//     //     {Ad:'URL Shortener', AdID: 2432142, format: 'Image', type:'Left Banner', offer:'N$ 4000', date:'12/03/2023'},
-//     // ])
-
-//     let offers = [
-//         {Ad:'URL Shortener', AdID: 1232142, format: 'Image', type:'Pop up', offer:'N$ 4000', date:'12/03/2023'},
-//         {Ad:'URL Shortener', AdID: 1232143, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-//         {Ad:'URL Shortener', AdID: 4632342, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-//         {Ad:'URL Shortener', AdID: 2432142, format: 'Image', type:'Left Banner', offer:'N$ 4000', date:'12/03/2023'},
-//     ]
-
-//     console.log(offers)
-
-//     const acceptOffer = (offerID) => {
-//         console.log(`Offer ${offerID} accepted`)
-//     }
-
-//     const rejectOffer = (offerID) => {
-//         console.log(`Offer ${offerID} rejected`)
-//     }
-
-//     return(
-//         <div>
-//             <h1>Offers</h1>
-//             <table>
-//                 <thead>
-//                     <tr>
-//                         <th>Ad</th>
-//                         <th>Format</th>
-//                         <th>Type</th>
-//                         <th>Offer</th>
-//                         <th>Date</th>
-//                         <th>Accept/Reject</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     {offers.map((offer) =>(
-//                         <tr key={offer.AdID}>
-//                             <td>{offer.Ad}</td>
-//                             <td>{offer.format}</td>
-//                             <td>{offer.type}</td>
-//                             <td>{offer.offer}</td>
-//                             <td>{offer.date}</td>
-//                             <td>
-//                                 <button className="acceptButton" onClick={() => acceptOffer(offer.AdID)}>Accept</button>
-//                                 <button className="rejectButton" onClick={() => rejectOffer(offer.AdID)}>Reject</button>
-//                             </td>
-//                         </tr>
-//                     ))}
-//                 </tbody>
-//             </table>
-//         </div>
-//     )
-// }
-
-// export default Offers
+export default Bids;

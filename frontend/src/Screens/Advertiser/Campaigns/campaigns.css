@@ -100,24 +100,24 @@
 .stats {
     padding: 10px;
     margin: 5px;
-    background-color: #111129; /* Background color */
-    color: white; /* Text color */
+    background-color: #111129; 
+    color: white; 
     border-radius: 5px;
     text-align: center;
-    width: 300px; /* Adjust the width of the boxes */
+    width: 300px; 
 }
 
 .graph-container {
-    margin: 0 auto; /* Center the graph container */
+    margin: 0 auto; 
 }
 
 .graph-container .row {
     display: flex;
-    align-items: flex-start; /* Align items to the top */
+    align-items: flex-start; 
 }
 
 .graph-container .row > div {
-    flex: 1; /* Each column takes up equal space */
+    flex: 1;
 }
 
 table{
