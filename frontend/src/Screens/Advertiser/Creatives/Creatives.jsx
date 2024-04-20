@@ -22,6 +22,17 @@ const Creatives = () => {
         
     });
 
+    // useEffect(() => {
+        
+    //     async function fetchCampaigns() {
+    //         try {
+    //             const response = await axios.get('/api/campaigns');
+    //             setCampaigns(response.data);
+    //         } catch (error) {
+    //             console.error('Error fetching campaigns:', error);
+    //         }
+    //     }
+
     const [formSubmissions, setFormSubmissions] = useState([]);
 
     const handleChange = (e) => {
@@ -45,6 +56,7 @@ const Creatives = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        // await axios.post(`/api/campaigns/${formData.adId}`, formData);
         setFormSubmissions(prevSubmissions => [...prevSubmissions, formData]);
         setFormData({
             // Reset form data after submission

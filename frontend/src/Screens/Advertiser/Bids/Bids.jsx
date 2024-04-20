@@ -99,3 +99,86 @@ const Bids = () => {
 }
 
 export default Bids;
+
+// import { useState, useEffect } from "react";
+// import axios from 'axios';
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
+// const Bids = () => {
+//     const [bidHistory, setBidHistory] = useState([]);
+//     const [currentBids, setCurrentBids] = useState([]);
+
+//     useEffect(() => {
+        
+//         axios.get('/api/bids')
+//             .then(response => {
+//                 setBidHistory(response.data);
+//             })
+//             .catch(error => {
+//                 console.error('Error fetching bid history:', error);
+//             });
+
+        
+//         axios.get('/api/currentBids')
+//             .then(response => {
+//                 setCurrentBids(response.data);
+//             })
+//             .catch(error => {
+//                 console.error('Error fetching current bids:', error);
+//             });
+//     }, []);
+
+//     return (
+//         <div>
+//             <h1>Bids</h1>
+//             <div>
+//                 <h2>Bid history</h2>
+//                 <table className="table">
+//                     <thead>
+//                         <tr>
+//                             <th>Channel</th>
+//                             <th>Offer</th>
+//                             <th>Status</th>
+//                             <th>Date</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {bidHistory.map((bid, index) => (
+//                             <tr key={index}>
+//                                 <td>{bid.Channel}</td>
+//                                 <td>{bid.Offer}</td>
+//                                 <td>{bid.Status}</td>
+//                                 <td>{bid.Date}</td>
+//                             </tr>
+//                         ))}
+//                     </tbody>
+//                 </table>
+//             </div>
+//             <div>
+//                 <h2>Current bids</h2>
+//                 <table className="table">
+//                     <thead>
+//                         <tr>
+//                             <th>Channel</th>
+//                             <th>Offer</th>
+//                             <th>Status</th>
+//                             <th>Date</th>
+//                         </tr>
+//                     </thead>
+//                     <tbody>
+//                         {currentBids.map((bid, index) => (
+//                             <tr key={index}>
+//                                 <td>{bid.Channel}</td>
+//                                 <td>{bid.Offer}</td>
+//                                 <td>{bid.Status}</td>
+//                                 <td>{bid.Date}</td>
+//                             </tr>
+//                         ))}
+//                     </tbody>
+//                 </table>
+//             </div>
+//         </div>
+//     )
+// }
+
+// export default Bids;
