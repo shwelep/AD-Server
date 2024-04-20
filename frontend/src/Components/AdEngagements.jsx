@@ -1,7 +1,7 @@
 import React from 'react'
-import { LineChart, Line, XAxis, YAxis, BarChart, Rectangle, Bar, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { XAxis, YAxis, BarChart, Rectangle, Bar, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-const AdEngagementsLineGraph = ({ }) => {
+const AdEngagementsBarGraph = ({ }) => {
 
     const data = [
         { ad: 'Sports boots', adClicks: 402, ctr: 32, revenue: 231 },
@@ -30,4 +30,4 @@ const AdEngagementsLineGraph = ({ }) => {
     )
 }
 
-export default AdEngagementsLineGraph;
+export default AdEngagementsBarGraph;

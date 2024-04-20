@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import LineGraph from '../../../Components/lineChart'
-import AdEngagementLineGraph from '../../../Components/AdEngagements'
+import AdEngagementBarGraph from '../../../Components/AdEngagements'
 
 const Dashboard = () => {
     return (
@@ -25,7 +25,7 @@ const Dashboard = () => {
                     <LineGraph />
                 </div>
                 <div className='graphs col-xl-5 col-lg-6 col-md-6 col-sm-12'>
-                    <AdEngagementLineGraph/>
+                    <AdEngagementBarGraph />
                 </div>
             </div>
             <lineChart />
