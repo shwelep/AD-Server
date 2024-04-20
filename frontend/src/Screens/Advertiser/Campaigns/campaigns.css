@@ -1,0 +1,125 @@
+/* .sidebar {
+    top: 0;
+    left: 0;
+    width: 250px;
+    background-color: #111129;
+    padding:20px;
+    height: 100%;
+    position: fixed;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    color:white
+}
+
+.sidebar ul li.active {
+    background-color: #8D699A;
+    padding: 10px;
+}
+
+.container2 {
+    display: flex;
+    height: 100%;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+    margin-left: 260px;
+}
+
+.ad-boost{
+    color: #8D699A;
+}
+
+@media screen and (max-width: 768){
+    .content{
+        margin-left: 100px;
+    }
+}
+
+.stats {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.stats h4 {
+    margin-top: 0;
+}
+
+.stats p {
+    margin-bottom: 0;
+}
+
+
+.stats {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.stats h4 {
+    margin-top: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.stats p {
+    margin-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+} */
+
+/* campaigns.css */
+
+/* campaigns.css */
+
+/* campaigns.css */
+
+.stats {
+    padding: 10px;
+    margin: 5px;
+    background-color: #111129; /* Background color */
+    color: white; /* Text color */
+    border-radius: 5px;
+    text-align: center;
+    width: 300px; /* Adjust the width of the boxes */
+}
+
+.graph-container {
+    margin: 0 auto; /* Center the graph container */
+}
+
+.graph-container .row {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.graph-container .row > div {
+    flex: 1; /* Each column takes up equal space */
+}
+
+table{
+    margin-top:50px;
+}
