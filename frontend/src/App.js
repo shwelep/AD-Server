@@ -14,7 +14,7 @@ import Creatives from './Screens/Advertiser/Creatives/Creatives';
 function App() {
   return (
     <BrowserRouter>
-      <div className='container2'>
+      <div className='container2 light-grey-background'>
         <SideBar />
         <div className='content'>
           <Routes>
