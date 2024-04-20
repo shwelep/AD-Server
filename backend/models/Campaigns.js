@@ -1,19 +1,43 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
-const Advertiser = require("./Advertiser");
+const Ads = require("./Ads");
 
 const Campaigns = sequelize.define("campaigns", {
-  campaign_id: {
+  CampaignID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  advertiser_id: {
+  AdID: {
     type: DataTypes.INTEGER,
     references: {
       model: Advertiser,
       key: "advertiser_id",
     },
+  },
+  CampaignName:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  Offer:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  OfferImpression:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  Status:{
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  DateStarted:{
+    type: DataTypes.DATEONLY,
+    allowNull: false,
+  },
+  DateStopped:{
+    type: DataTypes.DATEONLY,
+    allowNull: false,
   },
   budget: {
     type: DataTypes.FLOAT,
