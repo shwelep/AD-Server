@@ -4,12 +4,12 @@ import { XAxis, YAxis, BarChart, Rectangle, Bar, Tooltip, Legend, ResponsiveCont
 const AdEngagementsBarGraph = ({ }) => {
 
     const data = [
-        { ad: 'Sports boots', adClicks: 402, ctr: 32, revenue: 231 },
-        { ad: 'Book keep', adClicks: 281, ctr: 32, revenue: 231 },
-        { ad: 'Sport City', adClicks: 102, ctr: 32, revenue: 231 },
-        { ad: 'Grammar corrector', adClicks: 231, ctr: 32, revenue: 231 },
-        { ad: 'AI bot', adClicks: 234, ctr: 32, revenue: 231 },
-        { ad: 'Research bot', adClicks: 230, ctr: 32, revenue: 231 },
+        { ad: 'Sports boots', adClicks: 402, ctr: 32, revenue: 402},
+        { ad: 'Book keep', adClicks: 281, ctr: 32, revenue: 2102 },
+        { ad: 'Sport City', adClicks: 102, ctr: 32, revenue: 1012 },
+        { ad: 'Grammar corrector', adClicks: 231, ctr: 32, revenue: 2542 },
+        { ad: 'AI bot', adClicks: 234, ctr: 32, revenue: 5432 },
+        { ad: 'Research bot', adClicks: 230, ctr: 32, revenue: 7453 },
     ]
 
     return (
