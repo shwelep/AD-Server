@@ -69,42 +69,14 @@ table {
   tr:nth-child(even) {
     background-color: #f2f2f2;
   }
-  
-  .acceptButton {
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
-  
-  .rejectButton {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    padding: 8px 16px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 4px;
-  }
 
-  .generateAdButton {
+  .button {
     background-color: #111129;
     border: none;
     border-radius: 10px;
-    width: 100px;
+    width: 120px;
     color:white;
+    padding: 10px;
+    margin-right: 20px;
   }
   

@@ -36,7 +36,7 @@ const AdInventory = () => {
                             <td>{ad.size}</td>
                             <td>{ad.type}</td>
                             <td>{ad.availableSlots}</td>
-                            <td><button className="generateAdButton" onClick={() => generateAdTag(ad.AdID)}>Generate Ad Tag</button></td>
+                            <td><button style={{width:150}} className="button" onClick={() => generateAdTag(ad.AdID)}>Generate Ad Tag</button></td>
                         </tr>
                     ))}
                 </tbody>

@@ -42,8 +42,8 @@ const Offers = () => {
                             <td>{offer.offer}</td>
                             <td>{offer.date}</td>
                             <td>
-                                <button className="acceptButton" onClick={() => acceptOffer(offer.AdID)}>Accept</button>
-                                <button className="rejectButton" onClick={() => rejectOffer(offer.AdID)}>Reject</button>
+                                <button className="button" onClick={() => acceptOffer(offer.AdID)}>Accept</button>
+                                <button className="button" onClick={() => rejectOffer(offer.AdID)}>Reject</button>
                             </td>
                         </tr>
                     ))}

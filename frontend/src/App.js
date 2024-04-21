@@ -15,7 +15,7 @@ import AdvertiserDashboard from './Screens/Advertiser/Dashboard/AdvertiserDashbo
 function App() {
   return (
     <BrowserRouter>
-      <div className='container2 light-grey-background'>
+      <div className='container2'>
         <SideBar />
         <div className='content'>
           <Routes>
@@ -28,9 +28,7 @@ function App() {
             <Route path='/advertiser-dashboard' element={<AdvertiserDashboard/>}/>
           </Routes>
         </div>
-
       </div>
-
     </BrowserRouter>
   );
 }
