@@ -10,6 +10,7 @@ import '../src/Assets/css/styles.css'
 import Campaigns from './Screens/Advertiser/Campaigns/Campaigns';
 import Bids from './Screens/Advertiser/Bids/Bids';
 import Creatives from './Screens/Advertiser/Creatives/Creatives';
+import AdvertiserDashboard from './Screens/Advertiser/Dashboard/AdvertiserDashboard';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path='/campaigns' element={<Campaigns />} /> 
             <Route path='/bids' element={<Bids />} /> 
             <Route path='/creatives' element={<Creatives />} /> 
+            <Route path='/advertiser-dashboard' element={<AdvertiserDashboard/>}/>
           </Routes>
         </div>
 
