@@ -2,12 +2,12 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
 const Advertiser = sequelize.define("advertiser", {
-  advertiser_id: {
+  AdvertiserID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  advertiser_name: {
+  AdvertiserName: {
     type: DataTypes.STRING,
     allowNull: false,
   },

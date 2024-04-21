@@ -4,4 +4,6 @@ const publisherController = require("../controllers/publisherController");
 
 router.get("/", publisherController.getPublishers);
 
+router.post("/", publisherController.createPublisher);
+
 module.exports = router;

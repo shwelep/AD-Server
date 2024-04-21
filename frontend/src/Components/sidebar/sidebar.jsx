@@ -10,7 +10,7 @@ const SideBar = () => {
             <ul>
                 <li className={location.pathname === '/' ? 'active': ''}><Link to='/'>Dashboard</Link></li>
                 <li className={location.pathname === '/offers' ? 'active': ''}><Link to='/offers'>Offers</Link></li>
-                <li className={location.pathname === '/ad-inventory' ? 'active': ''}><Link to='/ad-inventory'>Ad Inventory</Link></li>
+                <li className={location.pathname === '/ad-inventory' ? 'active': ''}><Link to='/ad-inventory'>Ad inventory</Link></li>
             </ul>
         </div>
     )

@@ -9,6 +9,7 @@ const adRoutes = require("./routes/adRoutes");
 const advertiserRoutes = require("./routes/advertiserRoutes");
 const campaignRoutes = require("./routes/campaignRoutes");
 const publisherRoutes = require("./routes/publisherRoutes");
+const bidRoutes = require("./routes/bidRoutes");
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(bodyParser.json());
 
 app.use(
   cors({
-    origin: "http://localhost:3002",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
@@ -35,6 +36,9 @@ app.use("/campaign", campaignRoutes);
 
 // Publisher API Calls
 app.use("/publisher", publisherRoutes);
+
+// Bid API Calls
+app.use("/bid", bidRoutes);
 
 // Error handling middleware
 app.use((error, req, res, next) => {
@@ -61,7 +65,7 @@ sequelize
   });
 
 // Start the server
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
