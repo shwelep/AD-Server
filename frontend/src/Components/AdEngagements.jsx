@@ -13,7 +13,7 @@ const AdEngagementsBarGraph = ({ }) => {
     ]
 
     return (
-        <div style={{ width: '100%', height: '270px' }}>
+        <div style={{ width: '100%', height: '270px',display: 'flex', backgroundColor: '111129', padding:'20px'}}>
             <h5 style={{ color: 'white' }}>Ad performance</h5>
             <ResponsiveContainer>
                 <BarChart data={data} margin={{ top: 50, right: 20, bottom: 5 }}>

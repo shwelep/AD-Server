@@ -114,6 +114,7 @@
 .graph-container .row {
     display: flex;
     align-items: flex-start; 
+    
 }
 
 .graph-container .row > div {
