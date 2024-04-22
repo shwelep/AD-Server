@@ -1,4 +1,3 @@
-const { GEOGRAPHY } = require("sequelize");
 const Campaigns = require("../models/Campaigns");
 
 exports.getCampaigns = async (req, res) => {

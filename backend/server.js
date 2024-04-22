@@ -10,6 +10,7 @@ const advertiserRoutes = require("./routes/advertiserRoutes");
 const campaignRoutes = require("./routes/campaignRoutes");
 const publisherRoutes = require("./routes/publisherRoutes");
 const bidRoutes = require("./routes/bidRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 const app = express();
 
@@ -39,6 +40,8 @@ app.use("/publisher", publisherRoutes);
 
 // Bid API Calls
 app.use("/bid", bidRoutes);
+
+app.use("/user", userRoutes);
 
 // Error handling middleware
 app.use((error, req, res, next) => {
