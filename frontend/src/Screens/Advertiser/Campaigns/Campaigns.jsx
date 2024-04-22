@@ -45,7 +45,7 @@ const Campaigns = () => {
 
     return (
         <div>
-            <h1>Campaigns Dashboard</h1>
+            <h1>Campaigns </h1>
             <div className="row">
                 <div className="col-md-4 col-lg-4 col-sm-12 stats">
                     <h4>Running Campaigns</h4>

@@ -13,7 +13,7 @@ const ImpressionsLineGraph = () => {
     ];
 
     return (
-        <div style={{ width: '100%', height: '270px' ,  backgroundColor: '#111129'}}>
+        <div style={{ width: '100%', height: '270px' }}>
             <h5 style={{ color: 'white' , padding:'20px'}}>Impressions</h5>
             <ResponsiveContainer>
                 <LineChart data={data} margin={{ top: 50, right: 20, bottom: 5 }}>
