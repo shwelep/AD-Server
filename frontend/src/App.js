@@ -29,7 +29,6 @@ function App() {
             <Route path='/offers' element={<Offers />} />
             <Route path='/ad-inventory' element={<AdInventory />} />
             <Route path='/campaigns' element={<Campaigns />} />
-            <Route path='/creatives' element={<Creatives />} />
             <Route path='/advertiser-dashboard' element={<AdvertiserDashboard />} />
           </Routes>
         </div>
