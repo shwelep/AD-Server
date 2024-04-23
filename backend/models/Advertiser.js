@@ -1,18 +1,34 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/db");
 
-const Advertiser = sequelize.define("advertiser", {
-  AdvertiserID: {
+const Advertiser = sequelize.define("advertisers", {
+  advertiser_id: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  AdvertiserName: {
+  UserId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: "users",
+      key: "UserID",
+    },
+  },
+  advertiser_name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   budget: {
     type: DataTypes.FLOAT,
+    allowNull: false,
+  },
+  createdAt: {
+    type: DataTypes.DATE,
+    allowNull: false,
+  },
+  updatedAt: {
+    type: DataTypes.DATE,
     allowNull: false,
   },
 });

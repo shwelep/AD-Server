@@ -3,28 +3,28 @@ const sequelize = require("../config/db");
 const Advertiser = require("./Advertiser");
 
 const Ads = sequelize.define("ads", {
-  AdID: {
+  Ad_ID: {
     type: DataTypes.INTEGER,
     primaryKey: true,
     autoIncrement: true,
   },
-  AdvertiserID: {
+  advertiser_id: {
     type: DataTypes.INTEGER,
     references: {
       model: Advertiser,
       key: "advertiser_id",
     },
   },
-  AdName: {
+  Ad_Name: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  AdType: {
+  Ad_Type: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   
-  AdDuration: {
+  Ad_Duration: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -34,12 +34,12 @@ const Ads = sequelize.define("ads", {
     allowNull: false,
   },
   
-  AdFrequency: {
+  Ad_Frequency: {
     type: DataTypes.STRING,
     allowNull: false,
   },
   
-  AdPlacement: {
+  Ad_Placement: {
     type: DataTypes.STRING,
     allowNull: false,
   },
