@@ -19,11 +19,11 @@ const Campaigns = () => {
         fileAltText: '',
         offer: '',
         offerPerImpression: ''
-        
+
     });
 
     // useEffect(() => {
-        
+
     //     async function fetchCampaigns() {
     //         try {
     //             const response = await axios.get('/api/campaigns');
@@ -75,7 +75,7 @@ const Campaigns = () => {
             fileAltText: '',
             offer: '',
             offerPerImpression: '',
-            
+
         });
     };
 
@@ -84,7 +84,7 @@ const Campaigns = () => {
         <div>
             <h3>Create a new campaign 📣</h3>
 
-            <div className="form-title" style={{ backgroundColor: '#8D699A', color: 'white', padding: '10px', marginBottom: '20px' }}>
+            <div className="form-title" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
                 <h4>Campaign</h4>
             </div>
 
@@ -114,14 +114,14 @@ const Campaigns = () => {
                         <option value="campaign7">Technology</option>
                         <option value="campaign8">Travel</option>
                         <option value="campaign9">Other</option>
-                        
+
                     </select>
                 </div>
-                
-               
 
-                 {/* Targeting Section */}
-                 <div className="form-section" style={{ backgroundColor: '#8D699A', color: 'white', padding: '10px', marginBottom: '20px' }}>
+
+
+                {/* Targeting Section */}
+                <div className="form-section" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
                     <h4>Targeting</h4>
                 </div>
                 <div className="mb-3">
@@ -153,7 +153,7 @@ const Campaigns = () => {
                 </div>
 
                 {/* Creative Section */}
-                <div className="form-section" style={{ backgroundColor: '#8D699A', color: 'white', padding: '10px', marginBottom: '20px' }}>
+                <div className="form-section" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
                     <h4>Creative</h4>
                 </div>
                 <div className="mb-3">
@@ -175,7 +175,7 @@ const Campaigns = () => {
                 </div>
 
                 {/* Finance Section */}
-                <div className="form-section" style={{ backgroundColor: '#8D699A', color: 'white', padding: '10px', marginBottom: '20px' }}>
+                <div className="form-section" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
                     <h4>Finance</h4>
                 </div>
                 <div className="mb-3">
@@ -186,15 +186,8 @@ const Campaigns = () => {
                     <label htmlFor="offerPerImpression" className="form-label" style={{ fontWeight: 'bold' }}>Offer per Impression</label>
                     <input type="text" className="form-control" id="offerPerImpression" value={formData.offerPerImpression} onChange={handleChange} />
                 </div>
-                
-
-
-
-
                 <button style={{ backgroundColor: '#111129' }} type="submit" className="btn btn-primary">Create Campaign</button>
             </form>
-
-        
         </div>
     );
 }
