@@ -13,8 +13,21 @@ const AdEngagementsBarGraph = ({ }) => {
     ]
 
     return (
-        <div style={{ width: '100%', height: '270px',display: 'flex', backgroundColor: '111129', padding:'20px'}}>
-            <h5 style={{ color: 'white' }}>Ad performance</h5>
+        // <div style={{ width: '100%', height: '300px',display: 'flex', backgroundColor: '111129', padding:'20px'}}>
+        //     <h5 style={{ color: 'white' }}>Ad performance</h5>
+        //     <ResponsiveContainer>
+        //         <BarChart data={data} margin={{ top: 50, right: 30, bottom: 5 }}>
+        //             <XAxis dataKey={'ad'} />
+        //             <YAxis />
+        //             <Tooltip />
+        //             <Legend />
+        //             <Bar dataKey={'adClicks'} fill='#8884d8' activeBar={<Rectangle fill='violet' stroke='blue'/>}/>
+        //             <Bar dataKey={'ctr'} fill='purple' activeBar={<Rectangle fill='violet' stroke='blue'/>}/>
+        //             <Bar dataKey={'revenue'} fill='magenta' activeBar={<Rectangle fill='violet' stroke='blue'/>}/>
+        //         </BarChart>
+        //     </ResponsiveContainer>
+            <div style={{ width: '100%', height: '270px', backgroundColor: '111129', padding:'20' }}>
+            <h5 style={{ color: 'white' }}>Revenue</h5>
             <ResponsiveContainer>
                 <BarChart data={data} margin={{ top: 50, right: 20, bottom: 5 }}>
                     <XAxis dataKey={'ad'} />
