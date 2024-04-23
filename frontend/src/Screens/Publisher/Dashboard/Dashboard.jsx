@@ -50,15 +50,15 @@ const Dashboard = () => {
         <div className="">
             <h1>Dashboard</h1>
             <div className="row">
-                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 stats">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-10 stats">
                     <h4>Revenue</h4>
                     <p>N$ 23435</p>
                 </div>
-                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 stats">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-10 stats">
                     <h4>Offers</h4>
                     <p>12</p>
                 </div>
-                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-12 stats">
+                <div className="col-xl-3 col-lg-3 col-md-3 col-sm-10 stats">
                     <h4>CTR</h4>
                     <p>321</p>
                 </div>
@@ -77,15 +77,15 @@ const Dashboard = () => {
 
             <h1>Campaigns </h1>
             <div className="row">
-                <div className="col-md-4 col-lg-4 col-sm-12 stats">
+                <div className="col-md-4 col-lg-4 col-sm-10 stats">
                     <h4>Running Campaigns</h4>
                     <p>102</p>
                 </div>
-                <div className="col-md-4 col-lg-4 col-sm-12 stats">
+                <div className="col-md-4 col-lg-4 col-sm-10 stats">
                     <h4>Clicks</h4>
                     <p>40</p>
                 </div>
-                <div className="col-md-4 col-lg-4 col-sm-12 stats">
+                <div className="col-md-4 col-lg-4 col-sm-10 stats">
                     <h4>Money Spent</h4>
                     <p>$24K</p>
                 </div>
