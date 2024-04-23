@@ -27,6 +27,7 @@ body {
 .graphs {
     height: 300px;
     background-color: #111129;
+    margin-right: 100px;
     border-radius: 20px;
     margin-bottom: 20px;
 }
@@ -41,7 +42,7 @@ body {
 
 table {
     border-collapse: collapse;
-    width: 92%;
+    width: 100%;
     display: table;
   }
   

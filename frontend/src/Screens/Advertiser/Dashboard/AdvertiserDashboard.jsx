@@ -44,9 +44,8 @@ const AdvertiserDashboard = () => {
     };
 
     return (
-        <div className="container">
+        <div>
             <lineChart />
-
             <h1>Campaigns </h1>
             <div className="row">
                 <div className="col-md-4 col-lg-3 col-xl-3 col-sm-12 stats">
@@ -77,7 +76,7 @@ const AdvertiserDashboard = () => {
                     <p>40</p>
                 </div>
             </div>
-            <table>
+            <table style={{width:"92%"}}>
                 <thead>
                     <tr>
                         <th>Campaign</th>
