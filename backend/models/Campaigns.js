@@ -12,7 +12,7 @@ const Campaigns = sequelize.define("campaigns", {
     type: DataTypes.INTEGER,
     references: {
       model: Ads,
-      key: "AdID",
+      key: "advertiser_id",
     },
   },
   CampaignName:{
