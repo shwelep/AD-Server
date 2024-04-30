@@ -13,18 +13,30 @@ const ImpressionsLineGraph = () => {
     ];
 
     return (
-        <div style={{ width: '100%', height: '270px' }}>
-            <h5 style={{ color: 'white' , padding:'20px'}}>Impressions</h5>
-            <ResponsiveContainer>
-                <LineChart data={data} margin={{ top: 50, right: 20, bottom: 5 }}>
-                    <XAxis dataKey={'name'} />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type='monotone' dataKey={'impressions'} stroke='#82ca9d' />
-                </LineChart>
-            </ResponsiveContainer>
-        </div>
+        // <div style={{ width: '100%', height: '270px' }}>
+        //     <h5 style={{ color: 'white' , padding:'20px'}}>Impressions</h5>
+        //     <ResponsiveContainer>
+        //         <LineChart data={data} margin={{ top: 50, right: 20, bottom: 5 }}>
+        //             <XAxis dataKey={'name'} />
+        //             <YAxis />
+        //             <Tooltip />
+        //             <Legend />
+        //             <Line type='monotone' dataKey={'impressions'} stroke='#82ca9d' />
+        //         </LineChart>
+        //     </ResponsiveContainer>
+        // </div>
+        <div style={{ width: '100%', height: '270px', backgroundColor: '111129', padding:'20' }}>
+        <h5 style={{ color: 'white' }}>Revenue</h5>
+        <ResponsiveContainer>
+            <LineChart data={data} margin={{ top: 10, right: 20, bottom: 5 }}>
+                <XAxis dataKey={'name'} />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line type='monotone' dataKey={'impressions'} stroke='#8884d8' />
+            </LineChart>
+        </ResponsiveContainer>
+    </div>
     );
 };
 

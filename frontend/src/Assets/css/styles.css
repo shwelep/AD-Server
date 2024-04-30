@@ -26,10 +26,9 @@ body {
 
 .graphs {
     height: 300px;
-    width: 80px;
     background-color: #111129;
-    border-radius: 20px;
     margin-right: 100px;
+    border-radius: 20px;
     margin-bottom: 20px;
 }
 
@@ -80,3 +79,64 @@ table {
     margin-right: 20px;
   }
   
+  .container {
+    justify-content: center;
+    align-items: center;
+    padding-left: 50%;
+    padding-right: 50%;
+  }
+
+  .signup-container {
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    width:500px;
+    padding: 100px;
+    border:solid black 1px;
+    border-radius: 20px;
+    margin-left: 20%;
+  }
+
+  .login-container {
+
+  }
+
+  .signup-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label{
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .form-group input, 
+  .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #22065e;
+  }
+
+  .btn-submit {
+    background-color: #111129;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+
+  .btn-submit:hover {
+    background-color: #8D699A;
+  }
