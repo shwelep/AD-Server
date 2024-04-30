@@ -7,7 +7,7 @@ const Advertiser = sequelize.define("advertisers", {
     primaryKey: true,
     autoIncrement: true,
   },
-  UserId: {
+  UserID: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
