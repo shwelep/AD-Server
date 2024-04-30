@@ -7,10 +7,29 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [userType, setUserType] = useState('publisher')
 
+    const formData = {
+        username: userName,
+        email: email,
+        password: password,
+        userType: userType
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        console.log()
+        fetch('http://localhost:3001/user/signup', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers:{
+                "Content-Type":"application/json"
+            }
+        })
+        .then(response => {
+            console.log(response)
+        })
+        .catch(error => {
+            console.error('An error occurred while creating user:', error)
+        })
     }
 
     return (
