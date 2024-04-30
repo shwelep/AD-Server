@@ -49,7 +49,7 @@ exports.login = async (req, res) => {
 
 
         // Compare the provided password with the hashed password
-        const passwordMatch = await bcrypt.compare(Password, user.password);
+        const passwordMatch = await bcrypt.compare(Password, user.Password);
         if (!passwordMatch) {
             return res.status(401).json({ error: 'Invalid email or password' });
         }
@@ -58,6 +58,7 @@ exports.login = async (req, res) => {
         res.status(200).json({ message: 'Login successful', user });
     } catch (error) {
         console.error('Error logging in:', error);
+        console.error('Error stack:', error.stack);
         res.status(500).json({ error: 'Internal server error:', error });
     }
 };
