@@ -6,13 +6,14 @@ const AdInventory = () => {
         { AdName: 'Book keep', AdID: 2432142, format: 'Video', type: 'Left Banner', size: '720p', availableSlots: 10 },
     ]
 
-    const generateAdTag = (id) => {
-        const adItem = adInventory.find(item => item.AdID === id)
-        if (adItem) {
-            const adTag = `<script type="text/javascript" src="http://localhost:3001/ad?placement=${id}"`
-            alert(`Ad Tag for ${adItem.AdName}:\n\nn${adTag}`)
-        }
-    }
+    const placementIds = {
+        sidebarBanner: 'abc123',
+        topBanner: 'def456',
+        footerAd: 'ghi789',
+    };
+
+    const sidebarAdTag = generateAdTag(placementIds.sidebarBanner)
+    console.log(sidebarAdTag)
 
     return (
         <div>
@@ -36,7 +37,7 @@ const AdInventory = () => {
                             <td>{ad.size}</td>
                             <td>{ad.type}</td>
                             <td>{ad.availableSlots}</td>
-                            <td><button style={{width:150}} className="button" onClick={() => generateAdTag(ad.AdID)}>Generate Ad Tag</button></td>
+                            <td><button style={{ width: 150 }} className="button" onClick={() => generateAdTag(ad.AdID)}>Generate Ad Tag</button></td>
                         </tr>
                     ))}
                 </tbody>

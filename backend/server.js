@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const http = require("http");
+const path = require("path")
 
 // Routes
 const adRoutes = require("./routes/adRoutes");
@@ -12,21 +13,54 @@ const publisherRoutes = require("./routes/publisherRoutes");
 const bidRoutes = require("./routes/bidRoutes");
 const userRoutes = require("./routes/userRoutes");
 
+
 const app = express();
+app.use('/images', express.static(path.join(__dirname, 'images'), { 
+  setHeaders: (res, filePath) => {
+    const mimeType = {
+      '.jpg': 'image/jpeg',
+      '.jpeg': 'image/jpeg',
+      '.png': 'image/png',
+    };
+    const ext = path.extname(filePath);
+    res.setHeader('Content-Type', mimeType[ext] || 'application/octet-stream');
+  }
+}));
 
 app.use(bodyParser.json());
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+const adData = [
+  { 
+    id: 1, 
+    name: 'Low, low prices on Shoes', 
+    imageUrl: 'http://localhost:3002/images/dushawn-jovic-tr6BWkWMpEs-unsplash.jpg', 
+    placementId: 'sidebarAd',
+    placements: ['sidebarBanner'],
+    websiteUrl: 'https://unsplash.com/photos/white-and-black-nike-air-force-1-low-tr6BWkWMpEs'
+  },
+  { 
+    id: 2, 
+    name: 'Shopping Spree', 
+    imageUrl: 'http://localhost:3002/images/freestocks-_3Q3tsJ01nc-unsplash.jpg', 
+    placementId: 'topBannerAd',
+    placements: ['topBanner'],
+    websiteUrl: 'https://unsplash.com/photos/photo-of-woman-holding-white-and-black-paper-bags-_3Q3tsJ01nc'
+  },
+];
 
-// Defining Route Calls
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.setHeader('Content-Type', 'application/json');
+  next();
+});
 
-// Ad API Calls
+app.get('/retrieve-ads', (req, res) => {
+  res.json(adData)
+  return
+})
+
 app.use("/ads", adRoutes);
 
 // Advertiser API Calls
