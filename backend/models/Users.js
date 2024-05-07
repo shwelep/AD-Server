@@ -35,4 +35,15 @@ const Users = sequelize.define(
   }
 );
 
+Users.associate = (models) => {
+  Users.hasMany(models.Publisher, {
+    foreignKey: "UserID",
+    sourceKey: "UserID",
+  });
+  Users.hasMany(models.Advertiser, {
+    foreignKey: "UserID",
+    sourceKey: "UserID",
+  });
+};
+
 module.exports = Users;

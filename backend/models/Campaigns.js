@@ -8,7 +8,7 @@ const Campaigns = sequelize.define("campaigns", {
     primaryKey: true,
     autoIncrement: true,
   },
-  AdID: {
+  Ad_ID: {
     type: DataTypes.INTEGER,
     references: {
       model: Ads,
@@ -19,17 +19,25 @@ const Campaigns = sequelize.define("campaigns", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  Offer:{
+  CampaignType:{
+    type: DataTypes.ENUM('Games','Stationary','Transport Services','Fashion','Furniture','Sports/Gym','Food','Technology','Travel','Books'),
+    allowNull: false,
+  },
+  Channel: {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  // Offer:{
+  //   type: DataTypes.STRING,
+  //   allowNull: false,
+  // },
   OfferImpression:{
     type: DataTypes.STRING,
     allowNull: false,
   },
   Status:{
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   },
   DateStarted:{
     type: DataTypes.DATEONLY,
@@ -37,12 +45,15 @@ const Campaigns = sequelize.define("campaigns", {
   },
   DateStopped:{
     type: DataTypes.DATEONLY,
-    allowNull: false,
+    allowNull: true,
   },
   budget: {
     type: DataTypes.FLOAT,
-    allowNull: false,
+    allowNull: true,
   }
+},
+{
+  timestamps: false, // Ensure automatic timestamps are disabled
 });
 
 module.exports = Campaigns;

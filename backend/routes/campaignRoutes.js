@@ -6,6 +6,6 @@ router.get("/", campaignController.getCampaigns);
 
 router.get("/:adId", campaignController.getAdCampaigns);
 
-router.post("/:adId", campaignController.createCampaign);
+router.post("/newCampaign", campaignController.createCampaignWithAd);
 
 module.exports = router;
