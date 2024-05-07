@@ -18,7 +18,8 @@ const Campaigns = () => {
         fileAltText: '',
         offerPerImpression: '',
         interests: '',
-        exclusion: ''
+        exclusion: '',
+        format: ''
 
     });
 
@@ -166,10 +167,18 @@ const Campaigns = () => {
                 <div className="mb-3">
                     <label htmlFor="creativeType" className="form-label" style={{ fontWeight: 'bold' }}>Type</label>
                     <select className="form-select" id="creativeType" value={formData.creativeType} onChange={handleChange}>
+                        <option value="Top Banner">Top Banner</option>
+                        <option value="Left Banner">Left Banner</option>
+                        <option value="Right Banner">Right Banner</option>
+                        <option value="Interstitial">Interstitial</option>
+                        <option value="Pop Up">Pop Up</option>
+                    </select>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="creativeFormat" className="form-label" style={{ fontWeight: 'bold' }}>Format</label>
+                    <select className="form-select" id="creativeFormat" value={formData.format} onChange={handleChange}>
                         <option value="image">Image</option>
-                        <option value="banner">Banner</option>
-                        <option value="video">Short Video</option>
-                        <option value="other">Other</option>
+                        <option value="banner">Video</option>
                     </select>
                 </div>
                 <div className="mb-3">
