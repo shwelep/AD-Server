@@ -7,7 +7,7 @@ const Publisher = sequelize.define("publishers", {
     primaryKey: true,
     autoIncrement: true,
   },
-  UserId: {
+  UserID: {
     type: DataTypes.INTEGER,
     allowNull: false,
     references: {
@@ -19,17 +19,25 @@ const Publisher = sequelize.define("publishers", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  web_url: {
+  Email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
+    validate: {
+      isEmail: true,
+    },
+  },
+  web_url: {
+    type: DataTypes.STRING,
+    allowNull: true,
   },
   createdAt: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   updatedAt: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
 });
 

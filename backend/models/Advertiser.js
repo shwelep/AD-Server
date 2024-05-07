@@ -19,17 +19,25 @@ const Advertiser = sequelize.define("advertisers", {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  Email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+  },
   budget: {
     type: DataTypes.FLOAT,
-    allowNull: false,
+    allowNull: true,
   },
   createdAt: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
   updatedAt: {
     type: DataTypes.DATE,
-    allowNull: false,
+    allowNull: true,
   },
 });
 
