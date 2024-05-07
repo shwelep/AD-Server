@@ -1,9 +1,9 @@
 const AdInventory = () => {
     let adInventory = [
         { AdName: 'URL Shortener', AdID: 1232142, format: 'Image', type: 'Pop up', size: '400 x 300', availableSlots: 13 },
-        { AdName: 'URL Shortener', AdID: 1232143, format: 'Image', type: 'Top banner', size: '1000 x 400', availableSlots: 7 },
-        { AdName: 'URL Shortener', AdID: 4632342, format: 'Image', type: 'Interstitial', size: 'Full Screen', availableSlots: 3 },
-        { AdName: 'URL Shortener', AdID: 2432142, format: 'Video', type: 'Left Banner', size: '720p', availableSlots: 10 },
+        { AdName: 'Research AI', AdID: 1232143, format: 'Image', type: 'Top banner', size: '1000 x 400', availableSlots: 7 },
+        { AdName: 'Quil bot', AdID: 4632342, format: 'Image', type: 'Interstitial', size: 'Full Screen', availableSlots: 3 },
+        { AdName: 'Book keep', AdID: 2432142, format: 'Video', type: 'Left Banner', size: '720p', availableSlots: 10 },
     ]
 
     const generateAdTag = (id) => {

@@ -14,8 +14,8 @@ const Dashboard = () => {
                     <p>N$ 23435</p>
                 </div>
                 <div className="col-xl-3 col-lg-3 col-md-3 col-sm-10 stats">
-                    <h4>Offers</h4>
-                    <p>12</p>
+                    <h4>Ads</h4>
+                    <p>4</p>
                 </div>
                 <div className="col-xl-3 col-lg-3 col-md-3 col-sm-10 stats">
                     <h4>CTR</h4>

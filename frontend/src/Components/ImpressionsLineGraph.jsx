@@ -26,7 +26,7 @@ const ImpressionsLineGraph = () => {
         //     </ResponsiveContainer>
         // </div>
         <div style={{ width: '100%', height: '270px', backgroundColor: '111129', padding:'20' }}>
-        <h5 style={{ color: 'white' }}>Revenue</h5>
+        <h5 style={{ color: 'white' }}>Revenue per Impressions</h5>
         <ResponsiveContainer>
             <LineChart data={data} margin={{ top: 10, right: 20, bottom: 5 }}>
                 <XAxis dataKey={'name'} />

@@ -1,27 +1,48 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios'
 
 const Campaigns = () => {
+    const [publishersData, setPublisher] = useState([])
     const [formData, setFormData] = useState({
         // Form data
         adName: '',
         adDuration: '',
-        selectDate: '',
         adType: 'display',
-        campaign: '',
         geography: '',
         selectChannel: '',
-        adFrequency: '',
         adPlacement: '',
         timing: '',
         fileType: 'image',
         fileUpload: '',
         fileAltText: '',
-        offer: '',
-        offerPerImpression: ''
+        offerPerImpression: '',
+        interests: '',
+        exclusion: ''
 
     });
+
+    const options = [
+        "Arts and Crafts",
+        "Culinary",
+        "Fashion",
+        "Fitness",
+        "Gaming",
+        "Personal Development",
+        "Sports",
+        "Technology",
+        "Travel",
+        "Vehicles"
+    ];
+
+    useEffect(() => {
+        fetch('http://localhost:3002/user/get-users')
+            .then(response => response.json())
+            .then(data => {
+                setPublisher(data)
+            })
+            .catch(error => console.error('Error: ', error))
+    }, [])
 
     // useEffect(() => {
 
@@ -62,30 +83,24 @@ const Campaigns = () => {
             console.log('Campaign created:', response.data);
             setFormSubmissions(prevSubmissions => [...prevSubmissions, formData]);
             setFormData({
-                // Reset form data after submission
                 adName: '',
                 adDuration: '',
-                selectDate: '',
                 adType: 'display',
-                campaign: '',
                 geography: '',
                 selectChannel: '',
-                adFrequency: '',
                 adPlacement: '',
                 timing: '',
                 fileType: 'image',
                 fileUpload: '',
                 fileAltText: '',
-                offer: '',
                 offerPerImpression: '',
-                
+                interests: '',
+                exclusion: ''
             });
         } catch (error) {
             console.error('Error creating campaign:', error);
         }
     };
-    
-
 
     return (
         <div>
@@ -99,34 +114,13 @@ const Campaigns = () => {
                 {/* Campaign Section */}
                 <div className="mb-3">
                     <label htmlFor="adName" className="form-label" style={{ fontWeight: 'bold' }}>Ad Name</label>
-                    <input type="text" className="form-control" id="adName" value={formData.adName} onChange={handleChange}/>
-                    
+                    <input type="text" className="form-control" id="adName" value={formData.adName} onChange={handleChange} />
+
                 </div>
                 <div className="mb-3">
                     <label htmlFor="adDuration" className="form-label" style={{ fontWeight: 'bold' }}>Ad Duration</label>
-                    <input type="text" className="form-control" id="adDuration" value={formData.adDuration} onChange={handleChange}/>
+                    <input type="text" className="form-control" id="adDuration" value={formData.adDuration} onChange={handleChange} />
                 </div>
-                <div className="mb-3">
-                    <label htmlFor="selectDate" className="form-label" style={{ fontWeight: 'bold' }}>Select Date</label>
-                    <input type="date" className="form-control" id="selectDate" value={formData.selectDate} onChange={handleChange}/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="adType" className="form-label" style={{ fontWeight: 'bold' }}>Campaign</label>
-                    <select className="form-select" id="adType">
-                        <option value="campaign1">Games</option>
-                        <option value="campaign2">Stationary</option>
-                        <option value="campaign3">Transport Services</option>
-                        <option value="campaign4">Fasion</option>
-                        <option value="campaign5">Furniture</option>
-                        <option value="campaign6">Sports/Gym</option>
-                        <option value="campaign7">Technology</option>
-                        <option value="campaign8">Travel</option>
-                        <option value="campaign9">Other</option>
-
-                    </select>
-                </div>
-
-
 
                 {/* Targeting Section */}
                 <div className="form-section" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
@@ -134,30 +128,35 @@ const Campaigns = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="geography" className="form-label" style={{ fontWeight: 'bold' }}>Geography/Location</label>
-                    <input type="text" className="form-control" id="geography" value={formData.geography} onChange={handleChange}/>
+                    <input type="text" className="form-control" id="geography" value={formData.geography} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="selectChannel" className="form-label" style={{ fontWeight: 'bold' }}>Select Channel(s)</label>
-                    <select className="form-select" id="selectChannel" value={formData.selectChannel} onChange={handleChange}>
-                        <option value="channel1">Channel 1</option>
-                        <option value="channel1">Channel 2</option>
-                        <option value="channel1">Channel 3</option>
-                        <option value="channel1">Channel 4</option>
-                        <option value="channel1">Channel 5</option>
-                        <option value="channel1">Channel 6</option>
+                    <label htmlFor="interests" className="form-label" style={{ fontWeight: 'bold' }}>Interests</label>
+                    <select className="form-select" id="interests" value={formData.interests} onChange={handleChange}>
+                        {options.sort().map((option) => (
+                            <option key={option} value={option}>{option}</option>
+                        ))}
                     </select>
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="adFrequency" className="form-label" style={{ fontWeight: 'bold' }}>Ad Frequency</label>
-                    <input type="text" className="form-control" id="adFrequency" value={formData.adFrequency} onChange={handleChange}/>
+                    <label htmlFor="timing" className="form-label" style={{ fontWeight: 'bold' }}>Time to show ad</label>
+                    <input type="text" className="form-control" id="timing" value={formData.timing} onChange={handleChange} />
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="selectChannel" className="form-label" style={{ fontWeight: 'bold' }}>Select Publisher(s)</label>
+                    <select className="form-select" id="selectChannel" value={formData.selectChannel} onChange={handleChange}>
+                        {publishersData.map((user) => (
+                            <option key={user.id} value={user.id}>{user.UserName}</option>
+                        ))}
+                    </select>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="adPlacement" className="form-label" style={{ fontWeight: 'bold' }}>Ad Placement</label>
-                    <input type="text" className="form-control" id="adPlacement" value={formData.adPlacement} onChange={handleChange}/>
+                    <input type="text" className="form-control" id="adPlacement" value={formData.adPlacement} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="timing" className="form-label" style={{ fontWeight: 'bold' }}>Timing</label>
-                    <input type="text" className="form-control" id="timing" value={formData.timing} onChange={handleChange}/>
+                    <label htmlFor="adExclusion" className="form-label" style={{ fontWeight: 'bold' }}>Ad Exclusion</label>
+                    <input type="text" className="form-control" id="adExclusion" value={formData.exclusion} onChange={handleChange} />
                 </div>
 
                 {/* Creative Section */}
@@ -175,7 +174,7 @@ const Campaigns = () => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="fileUpload" className="form-label" style={{ fontWeight: 'bold' }}>Select File</label>
-                    <input type="file" className="form-control" id="fileUpload" value={formData.fileUpload} onChange={handleChange}/>
+                    <input type="file" className="form-control" id="fileUpload" value={formData.fileUpload} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="fileAltText" className="form-label" style={{ fontWeight: 'bold' }}>Alt Text</label>
@@ -185,10 +184,6 @@ const Campaigns = () => {
                 {/* Finance Section */}
                 <div className="form-section" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
                     <h4>Finance</h4>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="offer" className="form-label" style={{ fontWeight: 'bold' }}>Offer</label>
-                    <input type="text" className="form-control" id="offer" value={formData.offer} onChange={handleChange} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="offerPerImpression" className="form-label" style={{ fontWeight: 'bold' }}>Offer per Impression</label>

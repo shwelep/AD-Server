@@ -50,15 +50,15 @@ const AdvertiserDashboard = () => {
             <div className="row">
                 <div className="col-md-4 col-lg-3 col-xl-3 col-sm-12 stats">
                     <h4>Running Campaigns</h4>
-                    <p>102</p>
+                    <p>3</p>
                 </div>
                 <div className="col-md-4 col-lg-3 col-xl-3 col-sm-12 stats">
-                    <h4>Clicks</h4>
-                    <p>40</p>
+                    <h4>Leads</h4>
+                    <p>12</p>
                 </div>
                 <div className="col-md-4 col-lg-3 col-xl-3 col-sm-12 stats">
                     <h4>Money Spent</h4>
-                    <p>$24K</p>
+                    <p>$16K</p>
                 </div>
             </div>
             <div className="row graph-container">
@@ -68,12 +68,12 @@ const AdvertiserDashboard = () => {
             </div>
             <div className="row">
                 <div className="col-md-4 col-lg-6 col-xl-5 col-sm-12 stats">
-                    <h4>Running Campaigns</h4>
-                    <p>102</p>
+                    <h4>Conversions</h4>
+                    <p>32</p>
                 </div>
                 <div className="col-md-4 col-lg-6 col-xl-5 col-sm-12 stats">
-                    <h4>Clicks</h4>
-                    <p>40</p>
+                    <h4>CTR</h4>
+                    <p>11%</p>
                 </div>
             </div>
             <table style={{width:"92%"}}>

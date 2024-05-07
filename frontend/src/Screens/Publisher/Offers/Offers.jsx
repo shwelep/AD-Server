@@ -2,21 +2,23 @@ import { useState } from "react"
 
 const Offers = () => {
 
-    let offers = [
-        {Ad:'URL Shortener', AdID: 1232142, format: 'Image', type:'Pop up', offer:'N$ 4000', date:'12/03/2023'},
-        {Ad:'URL Shortener', AdID: 1232143, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-        {Ad:'URL Shortener', AdID: 4632342, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
-        {Ad:'URL Shortener', AdID: 2432142, format: 'Image', type:'Left Banner', offer:'N$ 4000', date:'12/03/2023'},
-    ]
+    const [offers, setOffers] = useState([
+        {Ad:'Author bot', AdID: 1232142, format: 'Image', type:'Pop up', offer:'N$ 4000', date:'12/03/2023'},
+        {Ad:'Arduino', AdID: 1232143, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
+        {Ad:'Paraphraser', AdID: 4632342, format: 'Image', type:'Top banner', offer:'N$ 4000', date:'12/03/2023'},
+        {Ad:'Football world', AdID: 2432142, format: 'Image', type:'Left Banner', offer:'N$ 4000', date:'12/03/2023'},
+    ]);
 
     console.log(offers)
 
     const acceptOffer = (offerID) => {
         console.log(`Offer ${offerID} accepted`)
+        setOffers(prevOffers => prevOffers.filter(offer => offer.AdID !== offerID));
     }
 
     const rejectOffer = (offerID) => {
         console.log(`Offer ${offerID} rejected`)
+        setOffers(prevOffers => prevOffers.filter(offer => offer.AdID !== offerID));
     }
 
     return(
@@ -27,7 +29,7 @@ const Offers = () => {
                     <tr>
                         <th>Ad</th>
                         <th>Format</th>
-                        <th>Type</th>
+                        <th>Placement</th>
                         <th>Offer</th>
                         <th>Date</th>
                         <th>Accept/Reject</th>

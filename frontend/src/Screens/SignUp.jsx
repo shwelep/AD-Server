@@ -1,36 +1,50 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 const SignUp = () => {
+    const navigate = useNavigate()
     const [userName, setUsername] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [userType, setUserType] = useState('publisher')
 
     const formData = {
-        username: userName,
-        email: email,
-        password: password,
-        userType: userType
+        UserName: userName,
+        Email: email,
+        Password: password,
+        UserType: userType
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        fetch('http://localhost:3001/user/signup', {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+      
+        const formData = {
+          UserName: userName,
+          Email: email,
+          Password: password,
+          UserType: userType,
+        };
+      
+        try {
+          const response = await fetch('http://localhost:3002/user/signup', {
             method: 'POST',
             body: JSON.stringify(formData),
-            headers:{
-                "Content-Type":"application/json"
-            }
-        })
-        .then(response => {
-            console.log(response)
-        })
-        .catch(error => {
-            console.error('An error occurred while creating user:', error)
-        })
-    }
+            headers: { "Content-Type": "application/json" },
+          });
+      
+          if (!response.ok) {
+            throw new Error(`Signup failed with status: ${response.status}`);
+          }
+      
+          console.log('Signup successful:', response); // Log for debugging
+      
+          // Navigate to dashboard after successful signup
+          navigate('/'); // Assuming you have `useNavigate` hook from react-router-dom
+        } catch (error) {
+          console.error('An error occurred during signup:', error);
+          // Handle signup errors (e.g., display error message)
+        }
+      };
 
     return (
         <div className="container">
