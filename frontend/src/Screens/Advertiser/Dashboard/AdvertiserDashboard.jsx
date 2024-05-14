@@ -41,8 +41,11 @@ const AdvertiserDashboard = () => {
 
 
     const stopCampaign = (campaignName) => {
+        const updatedCampaigns = campaigns.filter(campaign => campaign.Campaign !== campaignName);
+        setCampaigns(updatedCampaigns);
         console.log(`Campaign ${campaignName} stopped`);
-    };
+      };
+      
 
     return (
         <div>

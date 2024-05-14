@@ -1,6 +1,119 @@
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios'
+
+// const Campaigns = () => {
+//     const [publishersData, setPublisher] = useState([])
+//     const [formData, setFormData] = useState({
+//         // Form data
+//         adName: '',
+//         adDuration: '',
+//         adType: 'display',
+//         geography: '',
+//         selectChannel: '',
+//         adPlacement: '',
+//         timing: '',
+//         fileType: 'image',
+//         fileUpload: '',
+//         fileAltText: '',
+//         offerPerImpression: '',
+//         interests: '',
+//         exclusion: '',
+//         format: ''
+
+//     });
+
+//     const options = [
+//         "Arts and Crafts",
+//         "Culinary",
+//         "Fashion",
+//         "Fitness",
+//         "Gaming",
+//         "Personal Development",
+//         "Sports",
+//         "Technology",
+//         "Travel",
+//         "Vehicles"
+//     ];
+
+//     useEffect(() => {
+//         fetch('http://localhost:3002/user/get-users')
+//             .then(response => response.json())
+//             .then(data => {
+//                 setPublisher(data)
+//             })
+//             .catch(error => console.error('Error: ', error))
+//     }, [])
+
+//     // useEffect(() => {
+
+//     //     async function fetchCampaigns() {
+//     //         try {
+//     //             const response = await axios.get('/api/campaigns');
+//     //             setCampaigns(response.data);
+//     //         } catch (error) {
+//     //             console.error('Error fetching campaigns:', error);
+//     //         }
+//     //     }
+
+//     const [formSubmissions, setFormSubmissions] = useState([]);
+
+//     const handleChange = (e) => {
+//         const { id, value, type, checked } = e.target;
+//         setFormData(prevState => ({
+//             ...prevState,
+//             [id]: type === 'checkbox' ? checked : value
+//         }));
+//     };
+
+    
+//     const handleSubmit = async (e) => {
+//         e.preventDefault();
+//         try {
+//             const response = await axios.post(`/api/campaigns/${formData.adId}`, formData);
+//             console.log('Campaign created:', response.data);
+//             setFormSubmissions(prevSubmissions => [...prevSubmissions, formData]);
+//             setFormData({
+//                 adName: '',
+//                 adDuration: '',
+//                 adType: 'display',
+//                 geography: '',
+//                 selectChannel: '',
+//                 adPlacement: '',
+//                 timing: '',
+//                 fileType: 'image',
+//                 fileUpload: '',
+//                 fileAltText: '',
+//                 offerPerImpression: '',
+//                 interests: '',
+//                 exclusion: ''
+//             });
+//         } catch (error) {
+//             console.error('Error creating campaign:', error);
+//         }
+//     };
+
+//     return (
+//         <div>
+//             <h3>Create a new campaign 📣</h3>
+
+//             <div className="form-title" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
+//                 <h4>Campaign</h4>
+//             </div>
+
+            
+//         </div>
+//     );
+// }
+
+// export default Campaigns;
+
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom';
+
 
 const Campaigns = () => {
     const [publishersData, setPublisher] = useState([])
@@ -20,7 +133,6 @@ const Campaigns = () => {
         interests: '',
         exclusion: '',
         format: ''
-
     });
 
     const options = [
@@ -36,6 +148,19 @@ const Campaigns = () => {
         "Vehicles"
     ];
 
+    const options2 = [
+        "Craftify Creations",
+        "Flavor Fusion",
+        "StyleSavvy Boutique",
+        "FitFlex Gym",
+        "PixelPulse Games",
+        "MindMastery Coaching",
+        "ProSport Gear",
+        "TechTrend Innovations",
+        "Wanderlust Adventures",
+        "DriveWise Motors"
+    ];
+
     useEffect(() => {
         fetch('http://localhost:3002/user/get-users')
             .then(response => response.json())
@@ -45,63 +170,48 @@ const Campaigns = () => {
             .catch(error => console.error('Error: ', error))
     }, [])
 
-    // useEffect(() => {
-
-    //     async function fetchCampaigns() {
-    //         try {
-    //             const response = await axios.get('/api/campaigns');
-    //             setCampaigns(response.data);
-    //         } catch (error) {
-    //             console.error('Error fetching campaigns:', error);
-    //         }
-    //     }
-
     const [formSubmissions, setFormSubmissions] = useState([]);
 
-    const handleChange = (e) => {
-        const { id, value, type, checked } = e.target;
-        setFormData(prevState => ({
-            ...prevState,
-            [id]: type === 'checkbox' ? checked : value
-        }));
+    
+    const handleChange = (e)=>{
+        setFormData((prev) => ({...prev, [e.target.adName]: e.target.value}))
     };
 
+    const navigate = useNavigate()
     
-    const handleSubmit = async (e) => {
+    const handleClick = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post(`/api/campaigns/${formData.adId}`, formData);
-            console.log('Campaign created:', response.data);
-            setFormSubmissions(prevSubmissions => [...prevSubmissions, formData]);
-            setFormData({
-                adName: '',
-                adDuration: '',
-                adType: 'display',
-                geography: '',
-                selectChannel: '',
-                adPlacement: '',
-                timing: '',
-                fileType: 'image',
-                fileUpload: '',
-                fileAltText: '',
-                offerPerImpression: '',
-                interests: '',
-                exclusion: ''
+            const response = await fetch("http://localhost:3002/Campaigns", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
             });
-        } catch (error) {
-            console.error('Error creating campaign:', error);
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Error:', errorData);
+            } else {
+                navigate("/");
+            }
+        } catch (err) {
+            console.log(err);
         }
     };
+    
+
+    
 
     return (
         <div>
             <h3>Create a new campaign 📣</h3>
-
             <div className="form-title" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
                 <h4>Campaign</h4>
             </div>
-
-            <form>
+            <form onSubmit={handleClick}> {/* Add onSubmit attribute */}
+            
                 {/* Campaign Section */}
                 <div className="mb-3">
                     <label htmlFor="adName" className="form-label" style={{ fontWeight: 'bold' }}>Ad Name</label>
@@ -136,8 +246,10 @@ const Campaigns = () => {
                 <div className="mb-3">
                     <label htmlFor="selectChannel" className="form-label" style={{ fontWeight: 'bold' }}>Select Publisher(s)</label>
                     <select className="form-select" id="selectChannel" value={formData.selectChannel} onChange={handleChange}>
-                        {publishersData.map((user) => (
-                            <option key={user.id} value={user.id}>{user.UserName}</option>
+                        {options2.map((options2) => (
+                            <option key={options2} value={options2}>{options2}</option>
+                            
+                                
                         ))}
                     </select>
                 </div>
@@ -145,10 +257,10 @@ const Campaigns = () => {
                     <label htmlFor="adPlacement" className="form-label" style={{ fontWeight: 'bold' }}>Ad Placement</label>
                     <input type="text" className="form-control" id="adPlacement" value={formData.adPlacement} onChange={handleChange} />
                 </div>
-                <div className="mb-3">
+                {/* <div className="mb-3">
                     <label htmlFor="adExclusion" className="form-label" style={{ fontWeight: 'bold' }}>Ad Exclusion</label>
                     <input type="text" className="form-control" id="adExclusion" value={formData.exclusion} onChange={handleChange} />
-                </div>
+                </div> */}
 
                 {/* Creative Section */}
                 <div className="form-section" style={{ backgroundColor: '#111129', color: 'white', padding: '10px', marginBottom: '20px' }}>
@@ -188,10 +300,13 @@ const Campaigns = () => {
                     <label htmlFor="offerPerImpression" className="form-label" style={{ fontWeight: 'bold' }}>Offer per Impression</label>
                     <input type="text" className="form-control" id="offerPerImpression" value={formData.offerPerImpression} onChange={handleChange} />
                 </div>
-                <button style={{ backgroundColor: '#111129' }} type="submit" className="btn btn-primary" onClick={handleSubmit}>Create Campaign</button>
+                <button style={{ backgroundColor: '#111129' }} type="submit" className="btn btn-primary" onClick={handleClick}>Create Campaign</button>
+            
             </form>
         </div>
     );
 }
 
 export default Campaigns;
+
+

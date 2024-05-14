@@ -33,7 +33,7 @@ app.use("/ads", adRoutes);
 app.use("/advertiser", advertiserRoutes);
 
 // Campaign API Calls
-app.use("/campaign", campaignRoutes);
+app.use("/api/campaigns", campaignRoutes);
 
 // Publisher API Calls
 app.use("/publisher", publisherRoutes);
@@ -73,3 +73,5 @@ const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+

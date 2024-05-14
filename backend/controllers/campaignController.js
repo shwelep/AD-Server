@@ -95,3 +95,43 @@ exports.getAdCampaigns = async (req, res) => {
     res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
+
+// campaignController.js
+
+const Campaign = require('../models/Campaign');
+
+exports.createCampaign = async (req, res) => {
+    try {
+        // Extract campaign data from request body
+        const { adName, adDuration, adType, geography, selectChannel, adPlacement, timing, fileType, fileUpload, fileAltText, offerPerImpression, interests, exclusion, format } = req.body;
+
+        // Create new campaign instance
+        const newCampaign = new Campaign({
+            adName,
+            adDuration,
+            adType,
+            geography,
+            selectChannel,
+            adPlacement,
+            timing,
+            fileType,
+            fileUpload,
+            fileAltText,
+            offerPerImpression,
+            interests,
+            exclusion,
+            format
+        });
+
+        // Save the campaign to the database
+        await newCampaign.save();
+
+        // Respond with success message
+        res.status(201).json({ message: 'Campaign created successfully' });
+    } catch (error) {
+        // Handle errors
+        console.error('Error creating campaign:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
