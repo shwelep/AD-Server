@@ -66,17 +66,7 @@ const Campaigns = () => {
         }));
     };
 
-    // const handleFileUpload = (e) => {
-    //     const file = e.target.files[0];
-    //     if (file) {
-    //         // Storing the file name in the form data
-    //         setFormData(prevState => ({
-    //             ...prevState,
-    //             fileUpload: file.name
-    //         }));
-    //     }
-    // };
-
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {

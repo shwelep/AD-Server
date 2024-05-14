@@ -39,6 +39,7 @@ const AdvertiserDashboard = () => {
 
     console.log(campaigns);
 
+
     const stopCampaign = (campaignName) => {
         console.log(`Campaign ${campaignName} stopped`);
     };
